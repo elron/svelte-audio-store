@@ -37,7 +37,7 @@ const sounds = {
   // ... other sounds ...
 };
 
-export const uiSounds = createAudioStore(sounds);
+export const gameSounds = createAudioStore(sounds);
 ```
 
 By using descriptive key names, it becomes intuitive to play specific sounds in your application.
