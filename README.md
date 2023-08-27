@@ -1,4 +1,4 @@
-# svelte-audio-store: A Svelte Audio Management Library
+# svelte-audio-store
 
 A Svelte store for managing and playing audio, available as @elron/svelte-audio-store on npm.
 
