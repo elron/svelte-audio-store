@@ -5,8 +5,8 @@ A Svelte store for managing and playing audio, available as @elron/svelte-audio-
 `svelte-audio-store` provides a seamless way to manage audio in your Svelte projects. Whether it's for a game, a web application, or any project needing sound, `svelte-audio-store` offers an intuitive API to preload, play, stop, and manipulate audio.
 
 
-#### Example: [Demo](https://svelte-audio-store.netlify.app/)
-#### Package Showcase: [The Confetti Game](https://svelte-audio-store.netlify.app/) 
+- **Example:** [Demo](https://svelte-audio-store.netlify.app/)
+- **Package Showcase:** [The Confetti Game](https://svelte-audio-store.netlify.app/) 
 
 ## Installation
 
