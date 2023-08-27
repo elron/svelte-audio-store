@@ -16,7 +16,7 @@ pnpm install @elron/svelte-audio-store@latest
 npm install @elron/svelte-audio-store@latest
 
 # Yarn
-yarn install @elron/svelte-audio-store@latest
+yarn add @elron/svelte-audio-store@latest
 ```
 
 ## Getting Started
@@ -101,20 +101,57 @@ This code usually goes into `+layout.svelte`, but feel free to use it however ma
 <button on:click={setVolumeToHalf}>Set Volume to 50%</button>
 ```
 
+### Looping a sound
+```ts
+gameSounds.play('bgmusic', { loop: true });
+```
+
+### Fading a sound
+
+Fade in and out when a component is mounted and unmounted:
+```ts
+// plays background-music faded in
+onMount(() => gameSounds.play('bgmusic', { fade: 2000 }));
+
+// stops background-music faded out
+onDestory(() => gameSounds.stop('bgmusic', { fade: 2000 }));
+```
+
+### Random pitch
+For making sound variations, you can pitch it randomly (good for games):
+```ts
+gameSounds.play('ouch', { pitch: randomBetween(0.8, 1.4) });
+```
+
+### Trim a sound
+If you need to play only a portion of a sound-track:
+```ts
+// Starts on second 1.5 and continues until finish
+gameSounds.play('ouch', { trim: {start: 1.5} });
+
+// Starts on second 1.5 and continues until second 3
+gameSounds.play('ouch', { trim: {start: 1.5, end: 3} });
+
+// Starts on 300ms and continues until 600ms
+gameSounds.play('ouch', { trim: {start: 0.3, end: 0.6} });
+```
+
 ## Advanced Options
 `AudioStore` offers advanced playback settings like adjusting pitch, volume, loops, fades, and trimming. For a complete list of options, check the `PlayOptions` interface in the `AudioStore.ts` module.
 
 The `play` and `stop` methods support various advanced options:
 
 
-| Option	| Description	| Default Value | 
-|---|---|---|
-| volume	| Adjusts the playback volume of the sound. Values should be between 0.0 (muted) and 1.0 (full volume).	| `None` | 
-| loop	| Determines if the sound should loop indefinitely.	| `false` | 
-| fade	| Duration (in milliseconds) for a fade-in (when playing) or fade-out (when stopping).	| `None` | 
-| pitch	| Adjusts the playback speed and pitch of the sound. A value of 1.0 is the normal rate.	| `1.0` | 
-| preservesPitch	| If set to true, changing the pitch with playbackRate won't affect the sound's pitch. Browser support varies.	| `false` | 
-| trim	| An object specifying when to start (start) and stop (stop) the playback, in seconds.	| `None` | 
+| Option	| Type | Description	| Default Value | 
+|---|---|---|---|
+| volume	|`number` (0.0 - 1.0)	| Adjusts the playback volume of the sound. Values should be between 0.0 (muted) and 1.0 (full volume).	| `None` | 
+| loop	| `boolean` |Determines if the sound should loop indefinitely.	| `false` | 
+| fade	| `number` (milliseconds) 	| Duration (in milliseconds) for a fade-in (when playing) or fade-out (when stopping).	| `None` | 
+| pitch	|  `number` | Adjusts the playback speed and pitch of the sound. A value of 1.0 is the normal rate.	| `1.0` | 
+| preservesPitch |`boolean`	| If set to true, changing the pitch with playbackRate won't affect the sound's pitch. Browser support varies.	| `false` | 
+| trim	| `object { start?: number, end?: number }` | An object specifying when to start (start) and stop (stop) the playback, in seconds.	| `None` | 
+
+
 
 ## Contributing
 Want to contribute?
