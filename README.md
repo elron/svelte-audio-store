@@ -64,7 +64,7 @@ It's a good practice to preload your sounds, especially if they are crucial to t
 This code usually goes into `+layout.svelte`, but feel free to use it however makes sense in your project.
 ```
 
-## Usage
+## Usage & Examples
 
 ### Play a Sound
 
