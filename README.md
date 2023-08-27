@@ -28,7 +28,7 @@ Define a set of sounds for your application by associating keys to sound paths. 
 For example, if you're creating:
 
 ```svelte
-import { createAudioStore } from './AudioStore';
+import { createAudioStore } from '@elron/svelte-audio-store';
 
 const sounds = {
   click: '/sounds/click.mp3',
