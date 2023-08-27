@@ -87,11 +87,11 @@ This code usually goes into `+layout.svelte`, but feel free to use it however ma
     gameSounds.stop('go');
   }
 </script>
-
 <button on:click={stopGoSound}>Stop Go Sound</button>
 ```
 
 ### Adjust Volume (for all sounds)
+```svelte
 <script>
   function setVolumeToHalf() {
     gameSounds.setVolume(0.5);
