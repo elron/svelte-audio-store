@@ -23,26 +23,29 @@ yarn install @elron/svelte-audio-store@latest
 
 ### 1. Create an Audio Store
 
-First, you'll need to set up an audio store for your project. Think of this as a collection of sounds you intend to use.
+Define a set of sounds for your application by associating keys to sound paths. You can give any unique key name to each sound to make it easy to remember and use.
 
-For instance, if you're building a game, you might want to create a store named `gameStore.ts`.
-
+For example, if you're creating:
 
 ```svelte
 import { createAudioStore } from './AudioStore';
 
 const sounds = {
-  aboutToEnd: '/sounds/148772__daphne_in_wonderland__piano_string_hit_short-5.wav',
-  go: '/sounds/232003__danmitch3ll__xylophone-b.wav',
-  // ... other sounds
+  click: '/sounds/click.mp3',
+  notification: '/sounds/notification.wav',
+  alert: '/sounds/alert.mp3',
+  // ... other sounds ...
 };
 
-export const gameSounds = createAudioStore(sounds);
+export const uiSounds = createAudioStore(sounds);
 ```
 
-You're free to name your store based on its function or theme. Some naming ideas:
+By using descriptive key names, it becomes intuitive to play specific sounds in your application.
+
+You're also free to name your store based on its function or theme. Some naming ideas:
 
 - `uiSounds` for user-interface specific audio.
+- `gameSounds` if you're creating a game and have many sounds.
 - `bgMusicStore` for background music tracks.
 - `effectSounds` for short-lived sound effects.
 
