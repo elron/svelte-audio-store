@@ -99,6 +99,7 @@ This code usually goes into `+layout.svelte`, but feel free to use it however ma
 </script>
 
 <button on:click={setVolumeToHalf}>Set Volume to 50%</button>
+```
 
 ## Advanced Options
 `AudioStore` offers advanced playback settings like adjusting pitch, volume, loops, fades, and trimming. For a complete list of options, check the `PlayOptions` interface in the `AudioStore.ts` module.
