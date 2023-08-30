@@ -1,11 +1,24 @@
 <script>
 	import { onMount } from 'svelte';
-	import { gameSounds, sounds } from './gameSounds';
+	import { gameSounds, sounds } from './gameSounds.js';
 
 	onMount(() => {
 		gameSounds.preload();
 	});
 </script>
+
+
+
+
+
+
+<button on:click={() => gameSounds.play('')}>Play</button>
+
+
+
+
+
+
 
 <table>
 	<thead>
